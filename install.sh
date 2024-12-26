@@ -7,7 +7,7 @@ sudo pacman -Syu --noconfirm
 # Install required packages from the official repositories
 echo "Installing packages from the official repositories..."
 sudo pacman -S --needed mesa lib32-mesa vulkan-icd-loader lib32-vulkan-icd-loader \
-  xf86-video-amdgpu steam wine-staging giflib lib32-giflib gnutls lib32-gnutls \
+  xf86-video-amdgpu wine-staging giflib lib32-giflib gnutls lib32-gnutls \
   v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins \
   alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite \
   ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs \
@@ -16,7 +16,10 @@ sudo pacman -S --needed mesa lib32-mesa vulkan-icd-loader lib32-vulkan-icd-loade
   lib32-libva-vdpau-driver vulkan-radeon lib32-vulkan-radeon radeon-profile-git 
 
 echo "Installing user apps"
-sudo pacman -S discord lutris kitty neovim spectacle sqlitebrowser nodejs npm github-cli
+sudo pacman -S discord lutris kitty neovim spectacle sqlitebrowser nodejs npm github-cli zsh lazygit tmux
+
+echo "Installing steam (requires user input)"
+sudo pacman -S steam
 
 # Install Git and base-devel packages for AUR installation
 echo "Installing Git and base-devel for AUR helpers..."
@@ -28,14 +31,14 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 
-# Install oh-my-zsh
-echo "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Cleanup
 echo "Cleaning up..."
 cd ..
 rm -rf yay
+
+# Install oh-my-zsh
+echo "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Installation complete!"
 
