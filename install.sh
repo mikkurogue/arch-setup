@@ -16,7 +16,7 @@ sudo pacman -S --needed mesa lib32-mesa vulkan-icd-loader lib32-vulkan-icd-loade
   lib32-libva-vdpau-driver vulkan-radeon lib32-vulkan-radeon radeon-profile-git 
 
 echo "Installing user apps"
-sudo pacman -S discord lutris kitty neovim spectacle sqlitebrowser nodejs npm github-cli zsh lazygit tmux
+sudo pacman -S discord lutris kitty neovim spectacle sqlitebrowser nodejs npm github-cli zsh lazygit tmux fastfetch
 
 echo "Installing steam (requires user input)"
 sudo pacman -S steam
