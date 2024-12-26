@@ -13,7 +13,10 @@ sudo pacman -S --needed mesa lib32-mesa vulkan-icd-loader lib32-vulkan-icd-loade
   ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs \
   lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2 lib32-sdl2 \
   libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau libva-vdpau-driver \
-  lib32-libva-vdpau-driver vulkan-radeon lib32-vulkan-radeon radeon-profile-git neovim lutris kitty
+  lib32-libva-vdpau-driver vulkan-radeon lib32-vulkan-radeon radeon-profile-git 
+
+echo "Installing user apps"
+sudo pacman -S discord lutris kitty neovim spectacle sqlitebrowser nodejs npm github-cli
 
 # Install Git and base-devel packages for AUR installation
 echo "Installing Git and base-devel for AUR helpers..."
