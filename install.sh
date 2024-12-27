@@ -13,10 +13,10 @@ sudo pacman -S --needed mesa lib32-mesa vulkan-icd-loader lib32-vulkan-icd-loade
   ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs \
   lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2 lib32-sdl2 \
   libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau libva-vdpau-driver \
-  lib32-libva-vdpau-driver vulkan-radeon lib32-vulkan-radeon radeon-profile-git 
+  lib32-libva-vdpau-driver vulkan-radeon lib32-vulkan-radeon fuse2 
 
 echo "Installing user apps"
-sudo pacman -S discord lutris kitty neovim spectacle sqlitebrowser nodejs npm github-cli zsh lazygit tmux fastfetch
+sudo pacman -S discord lutris neovim spectacle sqlitebrowser nodejs npm github-cli zsh lazygit tmux fastfetch
 
 echo "Installing steam (requires user input)"
 sudo pacman -S steam
@@ -35,6 +35,9 @@ makepkg -si --noconfirm
 echo "Cleaning up..."
 cd ..
 rm -rf yay
+
+# install yay packages
+yay -S --no-confirm postman ghostty-git radeon-profile-git zsh-autosuggestions zsh-syntax-highlighting 
 
 # Install oh-my-zsh
 echo "Installing oh-my-zsh..."
