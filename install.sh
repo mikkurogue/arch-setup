@@ -6,7 +6,7 @@ sudo pacman -Syu --noconfirm
 
 # Install required packages from the official repositories
 echo "Installing packages from the official repositories..."
-sudo pacman -S --needed mesa lib32-mesa vulkan-icd-loader lib32-vulkan-icd-loader \
+sudo pacman -S --needed wine mesa lib32-mesa vulkan-icd-loader lib32-vulkan-icd-loader \
   xf86-video-amdgpu wine-staging giflib lib32-giflib gnutls lib32-gnutls \
   v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins \
   alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite \
@@ -16,10 +16,10 @@ sudo pacman -S --needed mesa lib32-mesa vulkan-icd-loader lib32-vulkan-icd-loade
   lib32-libva-vdpau-driver vulkan-radeon lib32-vulkan-radeon fuse2 
 
 echo "Installing user apps"
-sudo pacman -S discord lutris neovim spectacle sqlitebrowser nodejs npm github-cli zsh lazygit tmux fastfetch
+sudo pacman -S --no-confirm discord lutris neovim spectacle sqlitebrowser nodejs npm github-cli zsh lazygit tmux fastfetch xclip
 
 echo "Installing steam (requires user input)"
-sudo pacman -S steam
+sudo pacman -S --no-confirm steam
 
 # Install Git and base-devel packages for AUR installation
 echo "Installing Git and base-devel for AUR helpers..."
@@ -37,7 +37,7 @@ cd ..
 rm -rf yay
 
 # install yay packages
-yay -S --no-confirm postman ghostty-git radeon-profile-git zsh-autosuggestions zsh-syntax-highlighting 
+yay -S --no-confirm postman ghostty-git radeon-profile-git zsh-autosuggestions zsh-syntax-highlighting zig-nightly-bin
 
 # Install oh-my-zsh
 echo "Installing oh-my-zsh..."
