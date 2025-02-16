@@ -37,11 +37,14 @@ cd ..
 rm -rf yay
 
 # install yay packages
-yay -S --no-confirm postman ghostty-git radeon-profile-git zsh-autosuggestions zsh-syntax-highlighting zig-nightly-bin
+yay -S --no-confirm ghostty-git radeon-profile-git zsh-autosuggestions zsh-syntax-highlighting zig
 
 # Install oh-my-zsh
 echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install cargo and rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 echo "Installation complete!"
 
